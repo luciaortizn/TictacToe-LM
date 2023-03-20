@@ -1,0 +1,132 @@
+body{
+    background-color: black;
+    display: flex;
+
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+
+}
+.contenedor0{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+.nombre{
+    display: flex;
+    flex-wrap: wrap;
+    color:rgb(87, 255, 32);
+    text-align: center;
+    font-size: 50px;
+    font-family: monospace;
+    margin: 5px;
+    align-items: center;
+}
+.fila{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 5px;
+    align-content: center;
+}
+.casilla{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: 100px;
+   justify-content: center;
+
+}
+.fila :hover {
+    box-shadow: 1px 1px 1px 1px rgb(255, 255, 255);
+
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items:center;
+    align-content: center;
+    justify-content: center;
+}
+.boton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    border-radius: 20px;
+    border: solid rgb(87, 255, 32) 2px;
+    padding: 5px;
+    background-color: black;
+    width: 100px;
+    height: 80px;
+    font-family: monospace;
+    color: rgb(87, 255, 32); 
+}
+.boton:hover{
+  text-shadow: 12px;
+  color: black;
+  background-color:rgb(87, 255, 32);
+  border: solid black 2px;
+}
+.tiempo{
+    
+    color:rgb(87, 255, 32);
+    font-family: monospace;
+    font-size: 50px;
+}
+.puntosx{
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    color:white;
+    border: 2px solid rgb(255, 32, 188);
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    border-radius: 20px;
+    font-family: monospace;
+}
+#puntos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.puntos0{
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    color:white;
+    border: 2px solid rgb(73, 32, 255);
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    border-radius: 20px;
+    font-family: monospace;
+    
+}
+#tiempo{
+    font-size: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    height:fit-content;
+    padding: 20px;
+    align-items: center;
+    font-family: monospace;
+}
