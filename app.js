@@ -89,7 +89,7 @@ función sin comas
 //USO pintaconsola, la cual usa ganar, la cual usa contadorPuntos
 for(let i=0; i<tablero.length; i++){
     tablero[i].setAttribute('onclick',`pintaConsola(${i})`);
-    button.addEventListener('click',reinicio );
+    button.addEventListener('click',reinicio);
 } 
 contenedor.appendChild(button);
 //contador = setTimeout(cambioTurno(), 10000);
@@ -98,8 +98,8 @@ function reinicio(){
     //No reinicio como tal
     for(let i=0; i<tablero.length; i++){
         tablero[i].textContent =' ';
+        tablero[i].setAttribute('onclick',`pintaConsola(${i})`);
     }
-    console.log('reinicio');
 }
 
 function GANAR(){
