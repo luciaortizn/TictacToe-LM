@@ -49,6 +49,8 @@ let combinacionGanadora = [
 let temporizador = document.createElement('div');
 let button = document.createElement('button');
 let contenedor1 = document.getElementById('contenedor1'); //contiene los puntos y temporizador
+let contx=0;
+let cont0=0;
 temporizador.textContent = "Tiempo: ";
 temporizador.style.color = "white";
 temporizador.setAttribute('id','tiempo');
@@ -61,6 +63,7 @@ puntos0.textContent= "Puntos 0:";
 contenedor1.appendChild(temporizador);
 console.log(tablero.length);
 console.log(combinacionGanadora.length);
+
 function pintaConsola(numero){ 
     let x0= tablero[numero];
     if(turno){
@@ -99,14 +102,13 @@ contenedor.appendChild(button);
 function reinicio(){
     //No reinicio como tal
     for(let i=0; i<tablero.length; i++){
+        tablero[i].style.backgroundColor = "black";
         tablero[i].textContent =' ';
         tablero[i].setAttribute('onclick',`pintaConsola(${i})`);
     }
 }
 
 function GANAR(){
-    let cont0=0;
-    let contx=0;
     let actualx = [];
     let actual0= [];
     // Recorrer las casillas para ver su contenido
@@ -122,19 +124,32 @@ function GANAR(){
         if(actualx.includes(combinacionGanadora[i][0]) && actualx.includes(combinacionGanadora[i][1]) && actualx.includes(combinacionGanadora[i][2])){
             contx++;
             console.log(contx);
-             alert('GANAN LAS X');
-           
+            tablero[combinacionGanadora[i][0]].style.backgroundColor = "#57ff20";
+            tablero[combinacionGanadora[i][1]].style.backgroundColor = "#57ff20";
+            tablero[combinacionGanadora[i][2]].style.backgroundColor = "#57ff20";
+            for(j= 0; j<tablero.length; j++){
+                tablero[j].removeAttribute('onclick');
+                //para que no deje interactuar con las casillas
+            }
+
         }else if(actual0.includes(combinacionGanadora[i][0]) && actual0.includes(combinacionGanadora[i][1]) && actual0.includes(combinacionGanadora[i][2])){
              cont0++;
              console.log(cont0);
-             alert('GANAN LAS 0');      
+            tablero[combinacionGanadora[i][0]].style.backgroundColor = "#57ff20";
+            tablero[combinacionGanadora[i][1]].style.backgroundColor = "#57ff20";
+            tablero[combinacionGanadora[i][2]].style.backgroundColor = "#57ff20";
+            for(j= 0; j<tablero.length; j++){
+                tablero[j].removeAttribute('onclick');
+                //para que no deje interactuar con las casillas
+            }
+
         }
     }
     for(j= 0; j<tablero.length; j++){
         if((tablero[j].innerHTML=='X') || (tablero[j].innerHTML=='0')){
             tablero[j].removeAttribute('onclick');
            //para que no deje interactuar con las casillas
-            }
+        }
     }
     contadorPuntos(contx, cont0);
     puntos.appendChild(puntosx);
@@ -146,17 +161,14 @@ contenedor1.appendChild(puntos);
 /*
 @param contx, cont0
  */
-function contadorPuntos(cont0, contx){
+function contadorPuntos(){
     //let main = document.getElementsByClassName(main);
-    let puntosx = document.getElementsByClassName('puntosx');   
-    let puntos0 = document.getElementsByClassName('puntos0');
-   puntosx.textContent = 'Puntos X: '+ contx;
+   puntosx.textContent = 'Puntos X:'+ contx;
    puntos0.textContent = 'Puntos 0:'+ cont0;
    console.log(puntosx);
    console.log(puntos0);
-  // main.appendChild(puntosx);
-  // main.appendChild(puntos0);
    //si añade puntos pero el textcontent no se aplica
+
 };
 
  function cambioTurno(){
@@ -166,6 +178,3 @@ function contadorPuntos(cont0, contx){
     //function setInterval(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number }
 
  }
-function franjaVerde(){
-    
-}

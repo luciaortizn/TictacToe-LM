@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    user-select: none;
 }
 main{
     display: flex;
@@ -17,7 +18,7 @@ main{
 .nombre{
     display: flex;
     flex-wrap: wrap;
-    color:rgb(87, 255, 32);
+    color:#57ff20;
     text-align: center;
     font-size: 50px;
     font-family: monospace;
@@ -96,8 +97,8 @@ header{
     color:white;
     border: 2px solid rgb(255, 32, 188);
     margin-bottom: 10px;
-    width: 100px;
-    height: 70px;
+    width: 110px;
+    height: 80px;
     align-items: center;
     border-radius: 20px;
     font-family: monospace;
@@ -114,12 +115,11 @@ header{
     padding: 15px;
     color:white;
     border: 2px solid rgb(73, 32, 255);
-    width: 100px;
-    height: 70px;
+    width: 110px;
+    height: 80px;
     align-items: center;
     border-radius: 20px;
-    font-family: monospace;
-    
+    font-family: monospace; 
 }
 #tiempo{
     font-size: 50px;
