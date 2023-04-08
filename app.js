@@ -47,17 +47,18 @@ let combinacionGanadora = [
     [2, 4, 6]
 ];
 let temporizador = document.createElement('div');
+let button = document.createElement('button');
+let contenedor1 = document.getElementById('contenedor1'); //contiene los puntos y temporizador
 temporizador.textContent = "Tiempo: ";
 temporizador.style.color = "white";
 temporizador.setAttribute('id','tiempo');
-main.appendChild(temporizador);
 puntos.setAttribute('id', 'puntos');
 puntosx.setAttribute('class','puntosx');
 puntos0.setAttribute('class','puntos0');
 puntosx.textContent="Puntos X: ";
 puntos0.textContent= "Puntos 0:";
 //puntos0.textContent= "Puntos 0: 0";
-
+contenedor1.appendChild(temporizador);
 console.log(tablero.length);
 console.log(combinacionGanadora.length);
 function pintaConsola(numero){ 
@@ -78,8 +79,9 @@ function pintaConsola(numero){
        
     }
    turno = !turno;
+   
 }
-let button = document.createElement('button');
+
 button.textContent = 'Reiniciar partida';
 button.setAttribute('class','boton');
 /*Addeventlistener:
@@ -140,7 +142,7 @@ function GANAR(){
 }
 puntos.appendChild(puntosx);
 puntos.appendChild(puntos0);
-main.appendChild(puntos);
+contenedor1.appendChild(puntos);
 /*
 @param contx, cont0
  */
@@ -164,8 +166,6 @@ function contadorPuntos(cont0, contx){
     //function setInterval(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number }
 
  }
-
-
 function franjaVerde(){
-
+    
 }

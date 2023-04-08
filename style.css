@@ -1,15 +1,11 @@
 body{
     background-color: black;
-    display: flex;
-
 }
 main{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content:center;
     align-items: center;
-
+    justify-content: space-evenly;
 }
 .contenedor0{
     display: flex;
@@ -28,6 +24,11 @@ main{
     margin: 5px;
     align-items: center;
 }
+header{
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
 .fila{
     display:flex;
     flex-wrap: wrap;
@@ -39,8 +40,8 @@ main{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: 170px;
-    height: 170px;
+    width: 130px;
+    height: 130px;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     font-size: 100px;
@@ -96,7 +97,7 @@ main{
     border: 2px solid rgb(255, 32, 188);
     margin-bottom: 10px;
     width: 100px;
-    height: 100px;
+    height: 70px;
     align-items: center;
     border-radius: 20px;
     font-family: monospace;
@@ -114,7 +115,7 @@ main{
     color:white;
     border: 2px solid rgb(73, 32, 255);
     width: 100px;
-    height: 100px;
+    height: 70px;
     align-items: center;
     border-radius: 20px;
     font-family: monospace;
@@ -129,4 +130,11 @@ main{
     padding: 20px;
     align-items: center;
     font-family: monospace;
+}
+#contenedor1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
