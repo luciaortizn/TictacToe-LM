@@ -51,7 +51,9 @@ let button = document.createElement('button');
 let contenedor1 = document.getElementById('contenedor1'); //contiene los puntos y temporizador
 let contx=0;
 let cont0=0;
-temporizador.textContent = "Tiempo: ";
+let contT=5;
+let idT;
+temporizador.textContent = "Tiempo: 5";
 temporizador.style.color = "white";
 temporizador.setAttribute('id','tiempo');
 puntos.setAttribute('id', 'puntos');
@@ -66,6 +68,12 @@ console.log(combinacionGanadora.length);
 
 function pintaConsola(numero){ 
     let x0= tablero[numero];
+
+    clearInterval(idT);
+    contT=5;
+    //meto aquí el temporizador porque se inicia cuando hago click 
+    idT=setInterval(cambioTurno, 1000);
+
     if(turno){
         x0.textContent = 'X';
         x0.style.color= 'rgb(255, 32, 188)';
@@ -82,7 +90,7 @@ function pintaConsola(numero){
        
     }
    turno = !turno;
-   
+    
 }
 
 button.textContent = 'Reiniciar partida';
@@ -106,6 +114,7 @@ function reinicio(){
         tablero[i].textContent =' ';
         tablero[i].setAttribute('onclick',`pintaConsola(${i})`);
     }
+    clearInterval(idT);
 }
 
 function GANAR(){
@@ -131,6 +140,7 @@ function GANAR(){
                 tablero[j].removeAttribute('onclick');
                 //para que no deje interactuar con las casillas
             }
+            clearInterval(idT);
 
         }else if(actual0.includes(combinacionGanadora[i][0]) && actual0.includes(combinacionGanadora[i][1]) && actual0.includes(combinacionGanadora[i][2])){
              cont0++;
@@ -142,7 +152,8 @@ function GANAR(){
                 tablero[j].removeAttribute('onclick');
                 //para que no deje interactuar con las casillas
             }
-
+            //para que no siga cuando se gana
+            clearInterval(idT);
         }
     }
     for(j= 0; j<tablero.length; j++){
@@ -170,11 +181,13 @@ function contadorPuntos(){
    //si añade puntos pero el textcontent no se aplica
 
 };
-
- function cambioTurno(){
-    turno = !turno;
-    console.log('cambio de turno');
-   // alert('Se ha pasado el tiempo');
-    //function setInterval(handler: TimerHandler, timeout?: number | undefined, ...arguments: any[]): number }
-
+function cambioTurno(){
+    contT--;
+    if(contT<0){
+        contT=5;
+        turno=!turno;
+   } 
+   temporizador.textContent = "Tiempo: "+ contT;
+   console.log(contT);
+    // set intervale, función, entero en ms
  }
